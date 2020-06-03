@@ -24,6 +24,10 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y \
     ros-kinetic-gmapping \
     ros-kinetic-joy \
+    ros-kinetic-turtlebot \
+    ros-kinetic-turtlebot-gazebo \
+    ros-kinetic-turtlebot-navigation \
+    ros-kinetic-turtlebot-interactions \
  && rm -rf /var/lib/apt/lists/*
 
 # Allow SSH login into the container.
