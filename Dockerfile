@@ -24,8 +24,10 @@ RUN apt-get update && apt-get install -y \
 # https://github.com/IntelRealSense/librealsense/issues/4781
 
 # Installation of librealsense fix
-COPY docker/build-librealsense.sh /tmp/build-librealsense.sh
-RUN mkdir -p /tmp/librealsense && cd /tmp/librealsense && /tmp/build-librealsense.sh \
+RUN mkdir -p /tmp/librealsense
+COPY docker/build-librealsense.sh /tmp/librealsense/build-librealsense.sh
+COPY docker/postinst.fix /tmp/librealsense/postinst
+RUN cd /tmp/librealsense && sh /tmp/librealsense/build-librealsense.sh \
  && rm -rf /tmp/librealsense \
  && rm -rf /var/lib/apt/lists/*
 
