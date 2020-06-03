@@ -20,8 +20,17 @@ RUN apt-get update && apt-get install -y \
     protobuf-compiler \
  && rm -rf /var/lib/apt/lists/*
 
+# librealsense cannot be installed in this container; see
+# https://github.com/IntelRealSense/librealsense/issues/4781
+
+# Installation of librealsense fix
+COPY docker/build-librealsense.sh /tmp/build-librealsense.sh
+RUN mkdir -p /tmp/librealsense && cd /tmp/librealsense && /tmp/build-librealsense.sh \
+ && rm -rf /tmp/librealsense \
+ && rm -rf /var/lib/apt/lists/*
+
 # Install packages the Home Service Robot? project
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     ros-kinetic-gmapping \
     ros-kinetic-joy \
     ros-kinetic-turtlebot \
