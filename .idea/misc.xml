@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$/src">
+    <contentRoot DIR="$PROJECT_DIR$" />
+  </component>
+  <component name="CidrRootsConfiguration">
+    <sourceRoots>
+      <file path="$PROJECT_DIR$/src/pick_objects" />
+    </sourceRoots>
+    <libraryRoots>
+      <file path="$PROJECT_DIR$/src/slam_gmapping" />
+      <file path="$PROJECT_DIR$/src/turtlebot" />
+      <file path="$PROJECT_DIR$/src/turtlebot_interactions" />
+      <file path="$PROJECT_DIR$/src/turtlebot_simulator" />
+      <file path="/usr/src/gmock" />
+      <file path="/usr/src/gtest" />
+    </libraryRoots>
+    <excludeRoots>
+      <file path="$PROJECT_DIR$/.tmp" />
+      <file path="$PROJECT_DIR$/build" />
+      <file path="$PROJECT_DIR$/devel" />
+    </excludeRoots>
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+</project>

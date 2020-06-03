@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="Docker Container (2a9045cc-3bb5-4d15-ac0b-46d6f98d6986)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.yOJ3Tmnimv" local="$PROJECT_DIR$/src" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/src/cmake-build-debug-docker-container" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
