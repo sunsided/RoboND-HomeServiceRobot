@@ -8,8 +8,8 @@
 namespace {
     const auto delay_seconds = 5.0;
     const std::vector<std::array<float, 3>> subgoals = {
-            {-3, -5, 2.23},
-            {3,   2, 0}
+            {8.91, 2.93, -M_PI},
+            {9.07,   -3.14, -1.55}
     };
 }
 
