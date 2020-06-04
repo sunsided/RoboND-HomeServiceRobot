@@ -3,6 +3,13 @@
 To build the project, you can try executing `./run-nvidia.sh` to drop
 into an X11 aware Docker container with NVIDIA GPU support.
 
+To run the code, execute either one of these scripts; each of them will spin up all nodes required
+for the individual test task at hand: 
+
+- [`src/scripts/test_slam.sh`](src/scripts/test_slam.sh)
+- [`src/scripts/test_navigation.sh`](src/scripts/test_navigation.sh)
+- [`src/scripts/pick_objects.sh`](src/scripts/pick_objects.sh)
+
 ## Docker environment
 
 An issue exists with ROS Kinetic and TurtleBot in Docker, since the TurtleBot packages rely on
