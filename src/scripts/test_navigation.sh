@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
+echo $(dirname "$0")/../..
+
 xterm  -e  "source devel/setup.bash; roslaunch turtlebot_gazebo turtlebot_world.launch" &
 sleep 5
 
