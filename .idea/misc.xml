@@ -5,6 +5,7 @@
   </component>
   <component name="CidrRootsConfiguration">
     <sourceRoots>
+      <file path="$PROJECT_DIR$/src/add_markers" />
       <file path="$PROJECT_DIR$/src/pick_objects" />
     </sourceRoots>
     <libraryRoots>
