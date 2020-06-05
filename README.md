@@ -19,6 +19,17 @@ visualization of the item is implemented in [`add_markers_node.cpp`](src/add_mar
 Note that in both cases, the start and goal positions are provided statically, and the whole
 implementation can be (drastically) improved by publishing pick-up and drop-off locations via a dedicated topic.
 
+Previous projects have shown that attempting to run SLAM on a synthetic world like this are bound to fail.
+Here's the intermediate result after leaving from the start position and taking a left turn around the
+center triangular room, back to the start position:
+
+![](.readme/slam.png)
+
+Because this clearly fails, the map was instead created using the `pgm_map_creator` node directly from Gazebo.
+Adding more (natural) textures and items to this world would have improved SLAM, but also
+deviated a bit from the main idea of this repo. Again, investing more time here would make this quite an
+interesting project overall.
+
 ---
 
 To build the project, you can try executing `./run-nvidia.sh` to drop
