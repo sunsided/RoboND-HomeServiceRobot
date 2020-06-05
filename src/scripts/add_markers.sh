@@ -2,6 +2,7 @@
 set -euxo pipefail
 
 ROOT_DIR=$(dirname "$0")/../..
+cd $ROOT_DIR
 
 # See also: http://wiki.ros.org/roslaunch/XML/arg#Passing_an_argument_via_the_command-line
 TURTLEBOT_GAZEBO_WORLD_FILE=$(readlink -f "${ROOT_DIR}/src/world/world-1.world")
