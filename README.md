@@ -1,5 +1,26 @@
 # Home Service Robot
 
+The goal of this project is to bring together a couple of ROS/RViz/Gazebo concepts:
+
+- World and odometry simulation in Gazebo,
+- Visualization of the odometry, sensor and localization data, as well as virtual objects in RViz,
+- SLAM via gmapping, and
+- Adaptive Monte-Carle Localization via the AMCL package.
+
+![](.readme/pickup.webp)
+
+The robot in this scenario is tasked with picking up a virtual item from a start position,
+visualized by a red sphere in RViz, in order to bring to to a goal position. Navigation to the start and
+end positions is implemented in [`/pick_objects_node.cpp`](src/pick_objects/src/pick_objects_node.cpp), and
+visualization of the item is implemented in [`add_markers_node.cpp`](src/add_markers/src/add_markers_node.cpp).
+
+![](.readme/dropoff.webp)
+
+Note that in both cases, the start and goal positions are provided statically, and the whole
+implementation can be (drastically) improved by publishing pick-up and drop-off locations via a dedicated topic.
+
+---
+
 To build the project, you can try executing `./run-nvidia.sh` to drop
 into an X11 aware Docker container with NVIDIA GPU support.
 
