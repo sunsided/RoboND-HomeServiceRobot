@@ -76,17 +76,21 @@ int main(int argc, char **argv) {
 
     marker.lifetime = ros::Duration();
 
+    marker_pub.publish(marker);
+    ROS_INFO("Showing marker at source.");
+
     // TODO: Adjust to more than one item.
     auto have_item = false;
-    while (ros::ok()) {
+    auto job_done = false;
+    while (ros::ok() && !job_done) {
         if (!have_item) {
-            marker_pub.publish(marker);
             const auto dx = std::abs(marker.pose.position.x - current_x);
             const auto dy = std::abs(marker.pose.position.y - current_y);
             const auto location_reached = (dx <= location_tolerance) &&
                                           (dy <= location_tolerance);
 
             if (location_reached) {
+                ROS_INFO("Removing marker at source.");
                 marker.action = visualization_msgs::Marker::DELETE;
                 marker_pub.publish(marker);
                 have_item = true;
@@ -98,16 +102,14 @@ int main(int argc, char **argv) {
                                           (dy <= location_tolerance);
 
             if (location_reached) {
+                ROS_INFO("Adding marker at target.");
                 marker.action = visualization_msgs::Marker::ADD;
                 marker.pose.position.x = subgoals[1][0];
                 marker.pose.position.y = subgoals[1][1];
                 marker.pose.orientation = tf::createQuaternionMsgFromYaw(subgoals[1][2]);
 
                 marker_pub.publish(marker);
-                // have_item = false;
-
-                // No point in continuing the work here.
-                break;
+                job_done = true;
             }
         }
 
