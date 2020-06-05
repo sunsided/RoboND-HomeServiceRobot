@@ -43,6 +43,8 @@ for the individual test task at hand:
 - [`src/scripts/add_markers.sh`](src/scripts/add_markers.sh) for testing markers,
 - [`src/scripts/home_service.sh`](src/scripts/home_service.sh) for running the actual project.
 
+Make sure to `catkin_make` and `source devel/setup.bash` the workspace before.
+
 ---
 
 To build the project, you can try executing `./run-nvidia.sh` to drop
