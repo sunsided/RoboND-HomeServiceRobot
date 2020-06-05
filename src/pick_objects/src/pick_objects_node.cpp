@@ -1,4 +1,5 @@
 #include <vector>
+#include <array>
 
 #include <ros/ros.h>
 #include <move_base_msgs/MoveBaseAction.h>
@@ -7,6 +8,8 @@
 
 namespace {
     const auto delay_seconds = 5.0;
+
+    // TODO: Code duplication ...
     const std::vector<std::array<float, 3>> subgoals = {
             {8.91, 2.93, -M_PI},
             {9.07,   -3.14, -1.55}

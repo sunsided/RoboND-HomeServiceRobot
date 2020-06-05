@@ -422,6 +422,14 @@ Visualization Manager:
       Name: Full Plan
       Topic: /move_base/NavfnROS/plan
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: visualization_marker
+      Name: Marker
+      Namespaces:
+        add_markers: true
+      Queue Size: 100
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
